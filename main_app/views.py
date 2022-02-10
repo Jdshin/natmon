@@ -24,3 +24,10 @@ class PlantList(TemplateView):
             context['plants'] = Plant.objects.all()
             context['header'] = "Recent Sightings"
         return context
+    
+class PlantCreate(CreateView):
+    model = Plant
+    fields = ['common_name', 'species', 'img', 'city', 'country']
+    template_name = 'plant_create.html'
+    success_url = '/plants'
+    
