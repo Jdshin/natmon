@@ -7,3 +7,19 @@ img {
     width: 100%;
     object-fit: contain;
 }
+
+.navbar-brand {
+    min-height: 5rem;
+    height: 5rem;
+}
+
+.navbar-item {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.image {
+    height: 600px;
+    width: 100%;
+    object-fit: contain;
+}

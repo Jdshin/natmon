@@ -13,6 +13,21 @@
     <script src="{% static 'scripts/main.js' %}" defer></script>
   </head>
   <body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class='navbar-item' href='/'>
+        <img class='image is-64x64' src="{% static 'assets/sprout.png' %}"> 
+      <a class="navbar-item" href="/about">About</a>
+      <a class='navbar-item' href='/plants'>Discover</a>
+      <a class='navbar-item' href='/plants/new'>Add Sighting</a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
   <section class="section">
     <div class="container">
       {% block content%}{% endblock %}
