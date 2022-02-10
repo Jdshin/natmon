@@ -7,4 +7,4 @@ class Plant(models.Model):
     img = models.CharField(max_length=250)
     city = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
-    date = models.DateField(auto_now_add=True)
+    date_created = models.DateField(auto_now_add=True)
