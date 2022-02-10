@@ -1,35 +1,38 @@
 {% extends '_base.html' %} 
 {% block content %}
-<div class="detail__img">
-    <img src="{{plant.img}}" alt="{{plant.common_name}}" />
-    <a class="button is-dark" href="{% url 'plant_update' plant.pk%}">Update</a>
-</div>
-<div class="detail__common_name">
-    <h1 class="title">Common name: {{plant.common_name}}</h1>
-</div>
-<div class="detail__species">
-    <h1 class="title">Species: {{plant.species}}</h1>
-</div>
-<div class="detail__location">
-    <h1 class="title">Found near {{plant.city}}, {{plant.country}}</h1>
-</div>
-<div class="detail__container">
-    <div class="buttons">
-        <a href="" class="button is-info">
-            <span class="icon">
-                <i class="fas fa-edit"></i>
-            </span>
-        </a>
-        <a href="" class="button is-danger">
-            <span class="icon">
-                <i class="fas fa-trash-alt"></i>
-            </span>
-        </a>
+<div class="columns is-centered has-text-centered">
+    <div class="column">
+        <div class="block detail__img">
+            <img class="image" src="{{plant.img}}" alt="{{plant.common_name}}" />
+        </div>
+        
+        <div class="block detail__common_name">
+            <h1 class="title">Common name: {{plant.common_name}}</h1>
+        </div>
+    
+        <div class="block detail__species">
+            <h1 class="title">Species: {{plant.species}}</h1>
+        </div>
+    
+        <div class="block detail__location">
+            <h1 class="title">Found near {{plant.city}}, {{plant.country}}</h1>
+        </div>
+    
+        <div class="block detail__date_found">
+            <h4 class="title">Date Sighted: {{plant.date_created}}</h4>
+            <a href="{% url 'plant_update' plant.pk%}" class="button is-info">
+                <span class="icon">
+                    <i class="fas fa-edit"></i>
+                </span>
+                <p>Edit</p>
+            </a>
+            <a href="{% url 'plant_delete' plant.pk%}" class="button is-danger">
+                <span class="icon">
+                    <i class="fas fa-trash-alt"></i>
+                </span>
+                <p>Delete</p>
+            </a>
+        </div>
     </div>
-    <div class="detail__date_found">
-        <h4 class="title is-4">Date Sighted</h4>
-        <p>{{plant.date_created}}</p>
-    </div>
 </div>
-
 {% endblock %}

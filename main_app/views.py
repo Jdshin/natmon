@@ -41,3 +41,7 @@ class PlantUpdate(UpdateView):
     template_name = 'plant_update.html'
     success_url = '/plants'
     
+class PlantDelete(DeleteView):
+    model = Plant
+    template_name = 'plant_delete.html'
+    success_url = '/url'

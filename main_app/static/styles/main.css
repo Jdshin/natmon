@@ -1,0 +1,9 @@
+/* .detail__img{
+    height: 300px;
+} */
+
+img {
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+}
