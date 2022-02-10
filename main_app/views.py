@@ -19,6 +19,8 @@ class PlantList(TemplateView):
 
         if common_name != None:
             context['plants'] = Plant.objects.filter(common_name__icontains=common_name)
+            context['header'] = f"{common_name.lower().capitalize()} Sightings"
         else:
             context['plants'] = Plant.objects.all()
+            context['header'] = "Recent Sightings"
         return context
