@@ -1,0 +1,34 @@
+{% extends '_base.html' %} 
+{% block content %}
+<div class="detail__img">
+    <img src="{{plant.img}}" alt="{{plant.common_name}}" />
+</div>
+<div class="detail__common_name">
+    <h1 class="title">Common name: {{plant.common_name}}</h1>
+</div>
+<div class="detail__species">
+    <h1 class="title">Species: {{plant.species}}</h1>
+</div>
+<div class="detail__location">
+    <h1 class="title">Found near {{plant.city}}, {{plant.country}}</h1>
+</div>
+<div class="detail__container">
+    <div class="buttons">
+        <a href="" class="button is-info">
+            <span class="icon">
+                <i class="fas fa-edit"></i>
+            </span>
+        </a>
+        <a href="" class="button is-danger">
+            <span class="icon">
+                <i class="fas fa-trash-alt"></i>
+            </span>
+        </a>
+    </div>
+    <div class="detail__date_found">
+        <h4 class="title is-4">Date Sighted</h4>
+        <p>{{plant.date_created}}</p>
+    </div>
+</div>
+
+{% endblock %}

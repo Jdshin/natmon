@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView, DetailView
 from .models import Plant
 
 # Create your views here.
@@ -30,4 +30,8 @@ class PlantCreate(CreateView):
     fields = ['common_name', 'species', 'img', 'city', 'country']
     template_name = 'plant_create.html'
     success_url = '/plants'
+    
+class PlantDetail(DetailView):
+    model = Plant
+    template_name = 'plant_detail.html'
     

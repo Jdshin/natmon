@@ -15,10 +15,11 @@
         </div>
         <!--  This anchor tag will redirect back to artist list without a query param -->
         <a class="button is-dark" href="{% url 'plant_list' %}">Clear Search</a>
+        <a class="button is-primary" href="{% url 'plant_create'%}">New Sighting</a>
     </form>
     <div class="gallery">
         {% for plant in plants %}
-        <a href="">
+        <a href="{% url 'plant_detail' plant.pk %}">
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-square">
