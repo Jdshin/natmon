@@ -14,5 +14,11 @@ class PlantList(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['plants'] = Plant.objects.all()
+        
+        common_name = self.request.GET.get('common_name')
+
+        if common_name != None:
+            context['plants'] = Plant.objects.filter(common_name__icontains=common_name)
+        else:
+            context['plants'] = Plant.objects.all()
         return context
