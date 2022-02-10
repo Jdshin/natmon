@@ -2,6 +2,7 @@
 {% block content %}
 <div class="detail__img">
     <img src="{{plant.img}}" alt="{{plant.common_name}}" />
+    <a class="button is-dark" href="{% url 'plant_update' plant.pk%}">Update</a>
 </div>
 <div class="detail__common_name">
     <h1 class="title">Common name: {{plant.common_name}}</h1>

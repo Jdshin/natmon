@@ -35,3 +35,9 @@ class PlantDetail(DetailView):
     model = Plant
     template_name = 'plant_detail.html'
     
+class PlantUpdate(UpdateView):
+    model = Plant
+    fields = ['common_name', 'species', 'img', 'city', 'country']
+    template_name = 'plant_update.html'
+    success_url = '/plants'
+    
