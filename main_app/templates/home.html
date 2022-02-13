@@ -1,4 +1,10 @@
 {% extends '_base.html' %}
+{% load static %}
 {% block content%}
-    <h1 class='title'>Home Page</h1>
+    <div class="block is-flex is-justify-content-center has-text-centered">
+        <h1 class='title'>Discover Local Flora Near You</h1>
+    </div>
+    <div>
+        <img class="image is-256x256" src="{% static 'assets/homeimg.jpg' %}">
+    </div>
 {% endblock %}

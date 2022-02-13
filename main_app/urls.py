@@ -10,5 +10,6 @@ urlpatterns = [
     path('plants/<int:pk>', views.PlantDetail.as_view(), name='plant_detail'),
     path('plants/<int:pk>/update', views.PlantUpdate.as_view(), name='plant_update'),
     path('plants/<int:pk>/delete', views.PlantDelete.as_view(), name='plant_delete'),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup', views.Signup.as_view(), name='signup'),
 ]

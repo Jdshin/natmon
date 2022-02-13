@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView, DetailView
+from django.shortcuts import render, redirect
+from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView, DetailView, View
 from .models import Plant
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 class Home(TemplateView):
@@ -45,3 +47,21 @@ class PlantDelete(DeleteView):
     model = Plant
     template_name = 'plant_delete.html'
     success_url = '/url'
+
+class Signup(View):
+    def get(self, request):
+        form = UserCreationForm()
+        context = {'form': 'form'}
+        return render(request, 'registration/signup.html', context)
+    
+    def post(self, request):
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('artist_list')
+        else:
+            context = {'form':form}
+            return render(request, 'registration/signup.html', context)
+        
+        
